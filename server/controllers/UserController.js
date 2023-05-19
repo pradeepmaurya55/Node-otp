@@ -9,7 +9,7 @@ const generateOTP = async (req, res) => {
   if (!data || !data?.email) res.status(400).send("Email required");
   let user = await UserModel.findOne({ email: data?.email });
   if (!user) {
-    UserModel.create(data);
+    await UserModel.create(data);
   }
 
   user = await UserModel.findOne({ email: data?.email });
