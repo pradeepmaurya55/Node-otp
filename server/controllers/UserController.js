@@ -30,7 +30,6 @@ const generateOTP = async (req, res) => {
   }
 
   let info = await send_otp(data.email);
-  console.log(info.messageId);
   return res.status(200).send("OTP sent on mail");
 };
 
